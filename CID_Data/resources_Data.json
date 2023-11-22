@@ -1,0 +1,55 @@
+{
+    "engines" : {
+        "Godot 4.X" : "https://godotengine.org/download/",
+        "Godot 3.X" : "https://godotengine.org/download/3.x/",
+        "Ren'Py 8.X" : "https://www.renpy.org/latest.html",
+        "Ren'Py 7.X" : "https://www.renpy.org/latest-7.html",
+        "O3DE" : "https://o3de.org/download/"
+    },
+
+    "compilers" : {
+        "Python 3.X" : "https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe",
+        "Ruby" : "https://www.ruby-lang.org/es/downloads/"
+    },
+
+    "drawing" : {
+        "Inkscape" : "https://inkscape.org/release/inkscape-1.3/",
+        "Krita" : "https://krita.org/es/descargar/krita-desktop-es/",
+        "Gimp" : "https://www.gimp.org/downloads/",
+        "Libresprite" : "https://libresprite.github.io/#!/downloads",
+        "Piskel" : "https://www.piskelapp.com/download"
+    },
+
+    "3D" : {
+        "Blender3D" : "https://www.blender.org/download/",
+        "Mine_Imator" : "https://www.mineimator.com/download"
+    },
+
+    "audio" : {
+        "LMMS" : "https://lmms.io/download",
+        "Audacity" : "https://github.com/audacity/audacity/releases/download/"
+    },
+
+    "webs" : {
+        "Coolors" : "https://coolors.co/",
+        "Adorka Stock" : "https://www.adorkastock.com/",
+        "Poly Heaven" : "https://polyhaven.com/textures",
+        "Polygon" : "https://www.poliigon.com/",
+        "Sketchfab" : "https://sketchfab.com/",
+        "Mixamo" : "https://www.mixamo.com/",
+        "Colorsupplyyy" : "https://www.colorsupplyyy.com/",
+        "StockSnap" : "https://stocksnap.io/",
+        "ArtistaPirata (usar bajo tu propio riesgo)" : "https://Artistapirata.com/"
+    },
+
+    "misc" : {
+        "Visual Studio Code" : "https://code.visualstudio.com/",
+        "Visual Studio Community" : "https://visualstudio.microsoft.com/es/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&passive=false&cid=2030",
+        "NotePad++" : "https://notepad-plus-plus.org/downloads/",
+        "CodeBlocks (Incluye compilador)" : "https://www.codeblocks.org/downloads/",
+        "Recursos para blender" : "https://www.blender.org/download/demo-files/",
+        "Recursos para Mine-Imator" : "https://www.mineimatorforums.com/",
+        "Recursos de diseño UX/UI" : "https://t.me/+nuDjATR6Rgw0OTVi",
+        "Tipografias" : "https://t.me/+wJeHdhX6b95jNjVi"
+    }
+}
