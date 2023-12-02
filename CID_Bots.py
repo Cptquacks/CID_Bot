@@ -10,6 +10,8 @@ from telebot.types import InlineKeyboardButton
 from telebot.types import ForceReply
 from telebot.types import BotCommand
 
+
+
 #Essentials
 bot_Token : str = "6604703150:AAHYcCPG8jJPOX7p-R9_CKBQYevEEYG2nw0"
 bot = telebot.TeleBot(bot_Token)
@@ -35,10 +37,10 @@ def _welcome(message) -> None:
 @bot.message_handler(commands = ["start"])
 def _start(message) -> None:
     if message.chat.title != None:
-        bot.reply_to(message, f"Soy el bot de {message.chat.title}. Este bot esta diseñado para ayudarte en tu camino para conseguir y mejorar tus habilidades, para ver una lista de recursos utiles utiliza <b>/resources</b>.", parse_mode = "HTML")
+        bot.reply_to(message, f"Soy el bot de {message.chat.title}. Este bot esta diseñado para ayudarte en tu camino para conseguir y mejorar varias de tus habilidades, para ver una lista de recursos utiles utiliza <b>/resources</b>.", parse_mode = "HTML")
 
     else :
-        bot.send_message(chat_id = message.chat.id, text = f"Este bot fue diseñado para ayudarte a conseguir y mejorar tus habilidades, para ver una lista de recursos utiles utiliza <b>/resources</b>.", parse_mode = "HTML")
+        bot.send_message(chat_id = message.chat.id, text = f"Este bot fue diseñado para ayudarte a conseguir y mejorar varias de tus habilidades, para ver una lista de recursos utiles utiliza <b>/resources</b>.", parse_mode = "HTML")
 
 @bot.message_handler(commands = ["resources"])
 def _resources(message) -> None:
@@ -140,7 +142,12 @@ def _dice(message) -> None:
 
 @bot.message_handler(commands = ["report"])
 def _get_report(messsage) -> None:
-    msg = bot.reply_to(message = messsage, text = "Hola!. Indica el error encontrado en tu siguiente mensaje por favor.")
+    if messsage.from_user.username != None:
+        msg = bot.reply_to(message = messsage, text = f"Hola <b>@{messsage.from_user.username}</b>!. Indica el error encontrado en tu siguiente mensaje por favor.", parse_mode = "HTML")
+    
+    else :
+        msg = bot.reply_to(message = messsage, text = f"Hola <b>{messsage.from_user.first_name}</b>!. Indica el error encontrado en tu siguiente mensaje por favor.", parse_mode = "HTML")
+    
     bot.register_next_step_handler(msg, _send_report)
 
 def _send_report(message) -> None:
@@ -283,6 +290,18 @@ def _poll_send(message) -> None:
                 bot.delete_message(chat_id = key, message_id = msg.id-1)
                 bot.close_general_forum_topic(key)
                 bot.delete_message(chat_id = key, message_id = msg.id+1)
+
+@bot.message_handler(commands = ["get_reports"])
+def _show_reports(message) -> None:
+
+    with open("CID_Data/reports_Data.json", "r") as json_IMP:
+        errors_Lib : dict = json.loads(json_IMP.read())
+
+    tmp_STR : str = ""
+    for key, value in errors_Lib.items():
+        tmp_STR += f"{key} : {value}"
+    
+    bot.send_message(chat_id = message.chat.id, text = f"<b>Reportes de error:</b> \n{tmp_STR}", parse_mode = "HTML")
 
 
 
